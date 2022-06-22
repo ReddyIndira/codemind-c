@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int r,c,a[100][100],i,j,sum1=0,sum2=0;
+    int n,a[100][100],i,j,r,c,s1=0,s2=0;
     scanf("%d%d",&r,&c);
     for(i=0;i<r;i++)
     {
@@ -16,13 +16,13 @@ int main()
         {
             if(a[i][j]%2==0)
             {
-                sum1=sum1+a[i][j];
+                s1=s1+a[i][j];
             }
             else
             {
-                sum2=sum2+a[i][j];
+                s2=s2+a[i][j];
             }
         }
     }
-    printf("%d %d ",sum1,sum2);
+    printf("%d %d",s1,s2);
 }
