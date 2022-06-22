@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int a[100][100],i,j,r,c,s=0;
+    int n,a[100][100],i,j,r,c,s1=0;
     scanf("%d%d",&r,&c);
     for(i=0;i<r;i++)
     {
@@ -12,11 +12,11 @@ int main()
     }
     for(i=0;i<r;i++)
     {
-        s=0;
+        s1=0;
         for(j=0;j<c;j++)
         {
-            s=s+a[i][j];
+            s1=s1+a[i][j];
         }
-        printf("%d ",s);
+        printf("%d ",s1);
     }
 }
