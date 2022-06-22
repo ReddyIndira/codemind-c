@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int a[100][100],i,j,r,c,s=0,max=0,maxi=0;
+    int i,j,r,c,a[100][100],s1=0,max=0,s2=0;
     scanf("%d%d",&r,&c);
     for(i=0;i<r;i++)
     {
@@ -12,34 +12,27 @@ int main()
     }
     for(i=0;i<r;i++)
     {
-        s=0;
+        s1=0;
         for(j=0;j<c;j++)
         {
-            s=s+a[i][j];
+            s1=s1+a[i][j];
         }
-        if(s>max)
+        if(s1>max)
         {
-            max=s;
+            max=s1;
         }
     }
     for(j=0;j<c;j++)
     {
-        s=0;
+        s2=0;
         for(i=0;i<r;i++)
         {
-            s=s+a[i][j];
+            s2=s2+a[i][j];
         }
-        if(s>maxi)
+        if(s2>max)
         {
-            maxi=s;
+            max=s2;
         }
     }
-    if(max>maxi)
-    {
-        printf("%d",max);
-    }
-    else
-    {
-        printf("%d",maxi);
-    }
+    printf("%d",max);
 }
