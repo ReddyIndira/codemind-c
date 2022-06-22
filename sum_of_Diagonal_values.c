@@ -1,23 +1,23 @@
 #include<stdio.h>
 int main()
 {
-    int a,b,arr[100][100],s=0,i,j;
-    scanf("%d%d",&a,&b);
-    for(i=0;i<a;i++)
+    int r,c,a[100][100],i,j,s=0;
+    scanf("%d%d",&r,&c);
+    for(i=0;i<r;i++)
     {
-        for(j=0;j<b;j++)
+        for(j=0;j<c;j++)
         {
-            scanf("%d",&arr[i][j]);
+            scanf("%d",&a[i][j]);
         }
     }
-    for(i=0;i<a;i++)
+    for(i=0;i<r;i++)
     {
-        for(j=0;j<b;j++)
+        for(j=0;j<c;j++)
         {
-          if(i==j || i+j==b-1)
-          {
-              s=s+arr[i][j];
-          }
+            if(i==j || i+j==c-1)
+            {
+                s=s+a[i][j];
+            }
         }
     }
     printf("%d",s);
