@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n,arr[100],i,j,k,l,m,pp,dd,c=0;
+    int n,i,arr[100],j,k,np,sp,c=0,d,e;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
@@ -9,9 +9,9 @@ int main()
     }
     for(i=0;i<n;i++)
     {
-        for(j=arr[i];j>=1;j--)
+        for(j=arr[i];j>=arr[i]-10;j--)
         {
-            c=0;
+        	c=0;
             for(k=1;k<=j;k++)
             {
                 if(j%k==0)
@@ -21,14 +21,14 @@ int main()
             }
             if(c==2)
             {
-                pp=j;
-                l=arr[i]-pp;
+                np=j;
+                d=arr[i]-np;
                 break;
             }
         }
-        for(j=arr[i];j<=arr[i]+100;j++)
+        for(j=arr[i];j<=arr[i]+10;j++)
         {
-            c=0;
+        	c=0;
             for(k=1;k<=j;k++)
             {
                 if(j%k==0)
@@ -38,20 +38,20 @@ int main()
             }
             if(c==2)
             {
-                dd=j;
-                m=dd-arr[i];
+                sp=j;
+                e=sp-arr[i];
                 break;
             }
         }
-        if(l<=m)
+        if(d<e || d==e)
         {
             printf("%d
-",pp);
+",np);
         }
         else
         {
             printf("%d
-",dd);
+",sp);
         }
     }
 }
