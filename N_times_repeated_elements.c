@@ -1,36 +1,36 @@
 #include<stdio.h>
 int main()
 {
-    int n;
+    int n,arr[100],i,j,c=1,f=0,k;
     scanf("%d",&n);
-    int a[100],i,c,j,k=0,t;
     for(i=0;i<n;i++)
     {
-        scanf("%d",&a[i]);//1 2 3 4 5 6 2
+        scanf("%d",&arr[i]);
     }
-    scanf("%d",&t);
-    for(i=0;i<n;i++)//i=1<7
+    scanf("%d",&k);
+    for(i=0;i<n;i++)
     {
-        c=0;//c=0
-        for(j=0;j<n;j++)//j=0<7
+        c=1;
+        if(arr[i]!=-1)
         {
-            if(a[i]==a[j])//a[1]=a[0]
+            for(j=0;j<n;j++)
             {
-                c++;//c=1
-                if(i!=j)
+                if(arr[i]==arr[j] && i!=j)
                 {
-                	a[j]=0;
-				}
+                    c++;
+                    arr[j]=-1;
+                }
+            }
+            if(c==k)
+            {
+                printf("%d ",arr[i]);
+                f=1;
             }
         }
-        if(t==c && a[i]!=0)//a[0]=1
-        {
-            printf("%d ",a[i]);
-            k++;
-        }
     }
-    if(k==0)
+    if(f==0)
     {
-        printf("-1");
+        printf("%d",-1);
     }
 }
+    
